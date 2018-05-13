@@ -42,7 +42,7 @@
                   <h4>Arugula Pie</h4>
                 </header>
                 <p>$11.99</p>
-                <button type="submit" class="add-option-btn">ADD TO ORDER</button>
+                <button class="add-option-btn" value="pizza">ADD TO ORDER</button>
               </section>
             </section>
             <section class="option-block-row">
@@ -52,7 +52,7 @@
                   <h4>Smoked Swine</h4>
                 </header>
                 <p>$14.99</p>
-                <button type="submit" class="add-option-btn">ADD TO ORDER</button>
+                <button class="add-option-btn" value="ribs">ADD TO ORDER</button>
               </section>
               <section class="option-block">
                 <img src="img/ice_cream.jpg"></img>
@@ -60,7 +60,7 @@
                   <h4>Ice Cream Biscut</h4>
                 </header>
                 <p>$7.99</p>
-                <button type="submit" class="add-option-btn">ADD TO ORDER</button>
+                <button class="add-option-btn" value="iceCream">ADD TO ORDER</button>
               </section>
             </section>
           </section>
@@ -69,7 +69,43 @@
           <header>
             <h2>Order</h2>
           </header>
-          <table id="order-table">
+          <div class="flex-container">
+            <section class="order-column-items">
+              <header>
+                <h5>Item</h5>
+              </header>
+              <section id="item-name" class="order-item">
+                <ul>
+                </ul>
+              </section>
+            </section>
+            <section id="item-price" class="order-column-price">
+              <header>
+                <h5>Price</h5>
+              </header>
+              <section class="order-item">
+                <ul>
+                </ul>
+              </section>
+            </section>
+          </div>
+          <div class="flex-container">
+            <div class="order-total-text">
+              <ul>
+                <li>Subtotal</li>
+                <li>Tax</li>
+                <li>Total</li>
+              </li>
+            </div>
+            <div class="order-total-value">
+              <ul>
+                <li id="subtotal">$0.00</li>
+                <li id="tax">$0.00</li>
+                <li id="total">$0.00</li>
+              </li>
+            </div>
+          </div>
+          <!-- <table id="order-table">
             <tr>
               <th>Item</th>
               <th>Price</th>
@@ -102,7 +138,7 @@
               <td>Total</td>
               <td>$48.36</td>
             </tr>
-          </table>
+          </table> -->
           <section>
             <section class="contact-form">
               <div>

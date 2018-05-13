@@ -278,7 +278,52 @@ footer > section > ul > li > a:hover {
 }
 
 .order {
+  color: black;
   width: 25%;
+}
+
+.order-column-items, .order-column-price {
+  color: black;
+}
+
+.order-column-items header, .order-column-price header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.order-column-items {
+  width: 80%;
+}
+
+.order-column-price {
+  text-align: right;
+  width: 20%;
+}
+
+.order li {
+  font-size: 0.75em;
+  font-weight: 400;
+  padding: 15px 5px 15px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.order ul {
+  margin: 0;
+  padding: 0;
+}
+
+.order-total-text {
+  text-align: right;
+  width: 70%;
+}
+
+.order-total-value {
+  text-align: right;
+  width: 30%;
+}
+
+.order-item li:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 td, th {
