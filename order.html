@@ -9,6 +9,7 @@
       rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
+    <script src="js/order-form.js"></script>
   </head>
   <body>
     <nav>
@@ -21,11 +22,11 @@
     </nav>
     <main>
       <section class="flex-container">
-        <form class="menu">
+        <section class="menu">
           <header>
             <h2>Menu</h2>
           </header>
-          <section class="options">
+          <section id="menu-options" class="options">
             <section class="option-block-row">
               <section class="option-block">
                 <img src="img/burger.jpg"></img>
@@ -33,7 +34,7 @@
                   <h4>Royale with Cheese</h4>
                 </header>
                 <p>$8.99</p>
-                <button type="submit" class="add-option-btn">ADD TO ORDER</button>
+                <button class="add-option-btn" value="burger">ADD TO ORDER</button>
               </section>
               <section class="option-block">
                 <img src="img/pizza.jpg"></img>
@@ -63,12 +64,12 @@
               </section>
             </section>
           </section>
-        </form>
+        </section>
         <section class="order">
           <header>
             <h2>Order</h2>
           </header>
-          <table>
+          <table id="order-table">
             <tr>
               <th>Item</th>
               <th>Price</th>
@@ -85,11 +86,11 @@
               <td>Smoked Swine</td>
               <td>$14.99</td>
             </tr>
-            <tr>
+            <tr class="last-added">
               <td>Ice Cream Biscut</td>
               <td>$7.99</td>
             </tr>
-            <tr>
+            <tr class="static">
               <td>Subtotal</td>
               <td>$43.96</td>
             </tr>
@@ -141,7 +142,7 @@
             <p>Fine Dining, Delivered.</p>
           </header>
           <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="order.html">Order Delivery</a></li>
           </ul>
         </section>
