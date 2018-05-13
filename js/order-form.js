@@ -3,19 +3,23 @@ $('document').ready(function(){
   const menu = {
     burger: {
       description: "Royale with Cheese",
-      price: 8.99
+      price: 8.99,
+      qty: 0
     },
     pizza: {
       description: "Arugula Pie",
-      price: 11.99
+      price: 11.99,
+      qty: 0
     },
     ribs: {
       description: "Smoked Swine",
-      price: 14.99
+      price: 14.99,
+      qty: 0
     },
     iceCream: {
       description: "Ice Cream Biscut",
-      price: 7.99
+      price: 7.99,
+      qty: 0
     }
   }
 
@@ -63,9 +67,9 @@ $('document').ready(function(){
     order.subtotal = updateSubtotal(price);
     order.tax = updateTax(price);
     order.total = updateTotal();
-    $('#subtotal').text('$' + roundPrice(order.subtotal, 2));
-    $('#tax').text('$' + roundPrice(order.tax, 2));
-    $('#total').text('$' + roundPrice(order.total, 2));
+    $('#subtotal').text('$' + roundPrice(order.subtotal, 2).toFixed(2));
+    $('#tax').text('$' + roundPrice(order.tax, 2).toFixed(2));
+    $('#total').text('$' + roundPrice(order.total, 2).toFixed(2));
   }
 
   const acceptOrders = function() {
