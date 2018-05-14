@@ -477,6 +477,9 @@ footer > section > ul > li > a:hover {
   }
   .option-block {
     margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
   }
   .order {
     width: 90%;
