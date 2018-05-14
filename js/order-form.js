@@ -25,7 +25,7 @@ $('document').ready(function(){
 
   const totals = {
     subtotal: 0,
-    taxRate: 0.08,
+    taxRate: 0.0825,
     tax: 0,
     total: 0
   }
