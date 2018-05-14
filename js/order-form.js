@@ -39,17 +39,22 @@ $('document').ready(function(){
   }
 
   const addSelectionToOrderList = function(orderKey) {
+    let targetName = $('#item-name');
+    let targetPrice = $('#item-price');
     if (order[orderKey].qty === 0) {
-      $('#item-name').find('ul').append(`<li>${order[orderKey].description}</li>`);
-      $('#item-name').find('li:last-child').addClass(`${orderKey}`);
-      $('#item-price').find('ul').append(`<li>${order[orderKey].price}</li>`);
-      $('#item-price').find('li:last-child').addClass(`${orderKey}-price`);
+      $(targetName).find('ul')
+                   .append(`<li>${order[orderKey].description}</li>`);
+      $(targetName).find('li:last-child')
+                   .addClass(`${orderKey}`);
+      $(targetPrice).find('ul')
+                    .append(`<li>${order[orderKey].price}</li>`);
+      $(targetPrice).find('li:last-child')
+                    .addClass(`${orderKey}-price`);
     }
     else {
       $(`.${orderKey}`).text(`${order[orderKey].description}  x${order[orderKey].qty + 1}`);
       $(`.${orderKey}-price`).text(`${(order[orderKey].price)*((order[orderKey].qty)+1)}`);
     }
-      console.log(order[orderKey].qty);
   }
 
   const roundPrice = function(number, precision) {

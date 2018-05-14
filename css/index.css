@@ -396,3 +396,8 @@ footer > section > ul > li > a:hover {
 form > button:hover {
   border: 1px solid black;
 }
+
+.highlight {
+  color: #4caf50;
+  font-weight: 600;
+}
