@@ -413,9 +413,12 @@ footer > section > ul > li > a:hover {
     margin: 0;
     font-size: 3.5em;
   }
+  main {
+    margin-top: 105px;
+  }
   nav {
     display: block;
-    height: fit-content;
+    height: 105px;
     text-align: center;
   }
   nav > header {
@@ -462,10 +465,21 @@ footer > section > ul > li > a:hover {
   }
   .flex-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
+  }
+  .menu {
+    width: 90%;
+  }
+  .option-block-row{
+    justify-content: space-around;
+  }
+  .option-block {
+    margin-right: 0;
+  }
+  .order {
+    width: 90%;
   }
   footer > section:first-of-type {
     display: flex;
@@ -491,7 +505,13 @@ footer > section > ul > li > a:hover {
   footer > section > ul > li:first-of-type {
     border-left: 1px solid white;
   }
-  .material-icons {
+  form {
+    margin-top: 20px;
+  }
+  .big-icon {
     font-size: 55px !important;
+  }
+  .med-icon {
+    font-size: 35px !important;
   }
 }
