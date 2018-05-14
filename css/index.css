@@ -166,7 +166,7 @@ footer > section > ul > li > a:hover {
   margin-bottom: 0;
 }
 
-.order-btn {
+.order-btn, .submit-btn{
   background-color: #ff4081;
   border: 0px;
   border-radius: 3px;
@@ -179,7 +179,13 @@ footer > section > ul > li > a:hover {
 .order-btn:hover {
   background-color: white;
   color: #ff4081;
-  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn:hover {
+  background-color: #ff408199;
+  color: white;
+  box-shadow: 0px 0px 5px #ff408175;
 }
 
 .info {
@@ -421,6 +427,6 @@ tr:nth-child(n+6) {
   width: 100%;
 }
 
-form > button {
-  width: 40%;
+form > button:hover {
+  border: 1px solid black;
 }
