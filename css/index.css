@@ -93,6 +93,10 @@ nav > ul > li > a:hover {
   color: #ff4081;
 }
 
+nav .active {
+  border-bottom: 2px solid white;
+}
+
 footer {
   background-color: #1464c0;
 }
@@ -145,10 +149,6 @@ footer > section > ul > li > a:hover {
   color: black;
   font-size: 0.8em;
   text-decoration: none;
-}
-
-.active {
-  background-color: #135bae;
 }
 
 .banner {
