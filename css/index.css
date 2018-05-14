@@ -349,40 +349,6 @@ footer > section > ul > li > a:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-td, th {
-  font-size: 0.75em;
-  font-weight: 400;
-  padding: 15px 5px 15px 5px;
-}
-
-th {
-  font-weight: 600;
-}
-
-tr:first-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-td:last-child, th:last-child {
-  text-align: right;
-}
-
-table {
-  color: black;
-  border-collapse: collapse;
-  text-align: left;
-  width: 100%;
-}
-
-tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-tr:nth-child(n+6) {
-  background-color: white;
-  text-align: right;
-}
-
 .contact-form {
   display: flex;
   flex-direction: row;
