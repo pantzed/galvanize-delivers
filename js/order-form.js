@@ -1,6 +1,6 @@
 $('document').ready(function(){
 
-  const menu = {
+  const order = {
     burger: {
       description: "Royale with Cheese",
       price: 8.99,
@@ -23,7 +23,7 @@ $('document').ready(function(){
     }
   }
 
-  const order = {
+  const totals = {
     subtotal: 0,
     taxRate: 0.08,
     tax: 0,
@@ -31,18 +31,25 @@ $('document').ready(function(){
   }
 
   const getSelectionPrice = function(selection) {
-    return (menu[selection].price);
+    return (order[selection].price);
   }
 
   const getSelectionDescription = function(selection) {
-    return (menu[selection].description);
+    return (order[selection].description);
   }
 
-  const addSelectionToOrder = function(selection) {
-    let name = getSelectionDescription(selection);
-    let price = getSelectionPrice(selection);
-    $('#item-name').find('ul').append('<li>'+name+'</li>');
-    $('#item-price').find('ul').append('<li>'+price+'</li>');
+  const addSelectionToOrderList = function(orderKey) {
+    if (order[orderKey].qty === 0) {
+      $('#item-name').find('ul').append(`<li>${order[orderKey].description}</li>`);
+      $('#item-name').find('li:last-child').addClass(`${orderKey}`);
+      $('#item-price').find('ul').append(`<li>${order[orderKey].price}</li>`);
+      $('#item-price').find('li:last-child').addClass(`${orderKey}-price`);
+    }
+    else {
+      $(`.${orderKey}`).text(`${order[orderKey].description}  x${order[orderKey].qty + 1}`);
+      $(`.${orderKey}-price`).text(`${(order[orderKey].price)*((order[orderKey].qty)+1)}`);
+    }
+      console.log(order[orderKey].qty);
   }
 
   const roundPrice = function(number, precision) {
@@ -51,33 +58,39 @@ $('document').ready(function(){
   }
 
   const updateSubtotal = function(price) {
-    return order.subtotal + price;
+    return totals.subtotal + price;
   }
 
   const updateTax = function(price) {
-    return (order.taxRate * price) + order.tax;
+    return (totals.taxRate * price) + totals.tax;
   }
 
   const updateTotal = function() {
-    return order.tax + order.subtotal;
+    return totals.tax + totals.subtotal;
+  }
+
+  const updateItemQty = function(name) {
+    order[name].qty += 1;
   }
 
   const updateOrderTotalFields = function(selection) {
     let price = getSelectionPrice(selection);
-    order.subtotal = updateSubtotal(price);
-    order.tax = updateTax(price);
-    order.total = updateTotal();
-    $('#subtotal').text('$' + roundPrice(order.subtotal, 2).toFixed(2));
-    $('#tax').text('$' + roundPrice(order.tax, 2).toFixed(2));
-    $('#total').text('$' + roundPrice(order.total, 2).toFixed(2));
+    totals.subtotal = updateSubtotal(price);
+    totals.tax = updateTax(price);
+    totals.total = updateTotal();
+    $('#subtotal').text('$' + roundPrice(totals.subtotal, 2).toFixed(2));
+    $('#tax').text('$' + roundPrice(totals.tax, 2).toFixed(2));
+    $('#total').text('$' + roundPrice(totals.total, 2).toFixed(2));
   }
 
   const acceptOrders = function() {
     $('.add-option-btn').click(function(){
       event.preventDefault();
-      addSelectionToOrder($(this).val());
-      updateOrderTotalFields($(this).val())
-      console.log(order);
+      let selection = $(this).val();
+      addSelectionToOrderList(selection);
+      updateItemQty(selection);
+      updateOrderTotalFields(selection)
+      console.log(selection);
     });
   }
   acceptOrders();
