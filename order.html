@@ -114,7 +114,8 @@
                   <i class="material-icons small-icon">face</i>
                 </div>
                 <label for="name" class="small-form-label">Name
-                  <input type="text" name="name" placeholder="eg. John Smith" autocomplete="on" required="true" id="name" class="contact-input-field">
+                  <input type="text" name="name" placeholder="eg. John Smith" autocomplete="on" required="true"
+                  pattern="[a-zA-Z]+ [a-zA-Z\-]+" id="name" class="contact-input-field">
                 </label>
               </section>
               <section class="contact-form">
@@ -122,7 +123,7 @@
                   <i class="material-icons small-icon">phone</i>
                 </div>
                 <label for="phone" class="small-form-label">Phone Number
-                  <input type="text" name="phone" placeholder="888-888-8888" autocomplete="on" required="true" id="phone" class="contact-input-field">
+                  <input type="text" name="phone" placeholder="888-888-8888" autocomplete="on" required="true" pattern="\d{3}-\d{3}-\d{4}" id="phone" class="contact-input-field">
                 </label>
               </section>
               <section class="contact-form">
