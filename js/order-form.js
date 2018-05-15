@@ -52,8 +52,9 @@ $('document').ready(function(){
                     .addClass(`${orderKey}-price`);
     }
     else {
+      let updatedPrice = parseFloat((order[orderKey].price)*((order[orderKey].qty)+1)).toFixed(2);
       $(`.${orderKey}`).text(`${order[orderKey].description}  x${order[orderKey].qty + 1}`);
-      $(`.${orderKey}-price`).text(`${(order[orderKey].price)*((order[orderKey].qty)+1)}`);
+      $(`.${orderKey}-price`).text(updatedPrice);
     }
   }
 
